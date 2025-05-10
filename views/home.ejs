@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4 text-warning fw-bold">🎉 Daftar Objek Edukasi 🎉</h1>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped align-middle shadow-sm rounded bg-light">
+      <thead class="table-warning text-center">
+        <tr>
+          <th>🐾 Nama Objek</th>
+          <th>📂 Kategori</th>
+          <th>🖼️ Gambar</th>
+          <th>🔊 Audio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Contoh data statis; ganti dengan loop EJS -->
+        <tr>
+          <td class="text-center">Kucing</td>
+          <td class="text-center">Hewan</td>
+          <td class="text-center">
+            <img src="/images/kucing.png" alt="Kucing" width="80">
+          </td>
+          <td class="text-center">
+            <audio controls>
+              <source src="/audio/kucing.mp3" type="audio/mpeg">
+              Browser tidak mendukung audio.
+            </audio>
+          </td>
+        </tr>
+        <!-- Ulangi baris ini untuk data lainnya -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
