@@ -1,0 +1,71 @@
+.navbar {
+  background-color: #f8f3d9;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.navbar .logo {
+  color: #504b38;
+  font-weight: bold;
+  font-size: 29px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 30px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item > a {
+  color: #504b38;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px;
+  transition: color 0.3s;
+}
+
+.nav-item > a:hover {
+  color: #b9b28a;
+}
+
+.navbar .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.login-btn {
+  border: 1px solid #222;
+  padding: 8px 50px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  margin-right: 25px;
+}
+
+.login-btn:hover {
+  background-color: #b9b28a;
+}

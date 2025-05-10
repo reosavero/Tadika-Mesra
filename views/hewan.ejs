@@ -1,0 +1,28 @@
+<table class="table table-bordered text-center align-middle">
+  <thead class="table-warning">
+    <tr>
+      <th>Nama Objek</th>
+      <th>Kategori</th>
+      <th>Gambar</th>
+      <th>Audio</th>
+      <th>Ganti Gambar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% data.forEach(obj => { %>
+    <tr>
+      <td><%= obj.nama %></td>
+      <td><%= obj.kategori %></td>
+      <td>
+        <img src="<%= obj.gambar %>" class="rounded img-thumbnail" style="max-width: 100px;" id="preview-<%= obj.id %>">
+      </td>
+      <td>
+        <audio controls src="<%= obj.audio %>"></audio>
+      </td>
+      <td>
+        <input type="file" class="form-control form-control-sm" onchange="previewImage(event, '<%= obj.id %>')">
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>

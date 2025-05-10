@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<h2><%= title %></h2>
+
+<table border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>Nama Objek</th>
+      <th>Kategori</th>
+      <th>Gambar</th>
+      <th>Audio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% objek.forEach(item => { %>
+      <tr>
+        <td><%= item.objek %></td>
+        <td><%= item.kategori %></td>
+        <td>
+          <% if (item.image) { %>
+            <img src="/uploads/images/<%= item.image %>" alt="<%= item.objek %>" width="80">
+          <% } else { %>
+            Tidak ada gambar
+          <% } %>
+        </td>
+        <td>
+          <% if (item.audio) { %>
+            <audio controls>
+              <source src="/uploads/audio/<%= item.audio %>" type="audio/mpeg">
+              Browser tidak mendukung audio.
+            </audio>
+          <% } else { %>
+            Tidak ada audio
+          <% } %>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<%- include('partials/footer') %>
