@@ -10,18 +10,29 @@
 <body class="bg-warning">
   <div class="container py-5">
     <h1 class="text-center mb-4">Hewan</h1>
-    <div class="row">
-      <% data.forEach(item => { %>
-        <div class="col-md-4 mb-4">
-          <div class="card shadow">
-            <img src="/images/<%= item.gambar %>" class="card-img-top" alt="<%= item.nama %>">
-            <div class="card-body">
-              <h5 class="card-title"><%= item.nama %></h5>
-              <p class="card-text">Kategori: <%= item.kategori %></p>
-            </div>
-          </div>
-        </div>
-      <% }) %>
+      <% data.forEach(item => { 
+     const namaAudio = item.image.substring(0, item.image.lastIndexOf('.'));
+%>
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <img
+      src="/stylesheets/image/kartunhewan.image/<%= item.image %>"
+      width="220"
+      style="cursor: pointer;"
+      onclick="playSound('<%= namaAudio %>')"
+    >
+    <p><%= item.objek %></p>
+  </div>
+<% }) %>
+
+<audio id="player" hidden></audio>
+
+<script>
+  function playSound(nama) {
+    const player = document.getElementById('player');
+    player.src = `/stylesheets/audio/kartunhewan.audio/${nama}.mp3`;
+    player.play();
+  }
+</script>
     </div>
   </div>
 </body>
