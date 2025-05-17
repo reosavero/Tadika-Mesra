@@ -3,12 +3,9 @@
   position: fixed;
   top: 0;
   width: 100%;
-  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
 }
 .navbar .logo {
   color: #504b38;
@@ -81,4 +78,56 @@ body {
 
 input:focus {
   box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+body {
+  background: url("/images/tadikamesra.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.main-title {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 5rem;
+  color: yellow;
+  text-shadow: 3px 3px 0 #000;
+  position: absolute;
+  top: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  animation: bounce 2s infinite;
+}
+
+.menu-button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-button:hover {
+  transform: scale(1.1);
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 50px;
+  border-radius: 20px;
+}
+
+/* Animasi Bounce */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
