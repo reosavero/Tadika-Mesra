@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 const conn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '', // sesuaikan jika ada password
+  password: '',
   database: 'express_tm'
 });
 

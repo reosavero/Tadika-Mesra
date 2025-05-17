@@ -69,3 +69,16 @@
 .login-btn:hover {
   background-color: #b9b28a;
 }
+
+body {
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+}
+
+.card {
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
