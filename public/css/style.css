@@ -6,44 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.navbar .logo {
-  color: #504b38;
-  font-weight: bold;
-  font-size: 29px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: 30px;
-}
-
-.navbar .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.nav-item > a {
-  color: #504b38;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 8px 10px;
-  transition: color 0.3s;
-}
-
-.nav-item > a:hover {
-  color: #b9b28a;
-}
-
-.navbar .right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.8);
 }
 
 .lang-btn {
@@ -73,29 +36,11 @@ body {
   font-family: 'Luckiest Guy', cursive;
 }
 
-.custom-navbar {
-  background-color: #006400; /* hijau tua mirip Starfall */
-}
-
-.navbar-logo-text {
-  font-size: 1.8rem;
-  color: white;
-  text-shadow: 2px 2px 0px #000;
-}
-
-.nav-link {
-  color: #fff !important;
-  font-size: 1.2rem;
-  margin-right: 15px;
-  transition: transform 0.3s;
-}
-
 .nav-link:hover {
   transform: scale(1.1);
   color: #ff0 !important;
 }
 
-/* Tombol login dan menu */
 .btn-vibrate {
   animation: none;
   transition: all 0.2s ease-in-out;
@@ -130,15 +75,13 @@ body {
   color: white;
 }
 
-/* Font utama */
 body {
   font-family: 'Luckiest Guy', cursive;
   background-color: #fefdfd;
 }
 
-/* Navbar custom */
 .custom-navbar {
-  background-color: #ff69b4; /* pink cerah */
+  background-color:#fff; 
 }
 
 .navbar-logo-text {
@@ -152,13 +95,13 @@ body {
 }
 
 .nav-link {
-  color: white !important;
+  color: #3D90D7 !important;
   font-size: 1.2rem;
   transition: transform 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-  color: #ffff00 !important;
+  color: #ffd700 !important;
   transform: scale(1.1);
 }
 
@@ -187,3 +130,4 @@ body {
   80% { transform: translateX(2px); }
   100% { transform: translateX(0); }
 }
+
