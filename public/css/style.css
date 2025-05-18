@@ -69,66 +69,121 @@
 }
 
 body {
-  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  background-color: #f2f9ff;
+  font-family: 'Luckiest Guy', cursive;
 }
 
-.card {
-  border-radius: 1rem;
-  background-color: #fff;
+.custom-navbar {
+  background-color: #006400; /* hijau tua mirip Starfall */
 }
 
-input:focus {
-  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+.navbar-logo-text {
+  font-size: 1.8rem;
+  color: white;
+  text-shadow: 2px 2px 0px #000;
 }
 
-body {
-  background: url("/images/tadikamesra.png") no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  text-shadow: 1px 1px 2px #000;
+.nav-link {
+  color: #fff !important;
+  font-size: 1.2rem;
+  margin-right: 15px;
+  transition: transform 0.3s;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+  color: #ff0 !important;
+}
+
+/* Tombol login dan menu */
+.btn-vibrate {
+  animation: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-vibrate:hover {
+  animation: vibrate 0.4s linear infinite;
+}
+
+@keyframes vibrate {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
 }
 
 .main-title {
+  font-size: 4rem;
   font-family: 'Luckiest Guy', cursive;
-  font-size: 5rem;
   color: yellow;
-  text-shadow: 3px 3px 0 #000;
-  position: absolute;
-  top: 190px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  animation: bounce 2s infinite;
+  text-shadow: 2px 2px 5px black;
+  margin-top: 20px;
 }
 
-.menu-button {
-  font-size: 1.5rem;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  margin: 10px;
-  transition: all 0.3s ease-in-out;
+/* Overlay tengah */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+  color: white;
 }
 
-.menu-button:hover {
+/* Font utama */
+body {
+  font-family: 'Luckiest Guy', cursive;
+  background-color: #fefdfd;
+}
+
+/* Navbar custom */
+.custom-navbar {
+  background-color: #ff69b4; /* pink cerah */
+}
+
+.navbar-logo-text {
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.navbar-brand img {
+  size: 50px;
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #ffff00 !important;
   transform: scale(1.1);
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 50px;
-  border-radius: 20px;
+.btn-vibrate {
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Animasi Bounce */
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  40% {
-    transform: translateX(-50%) translateY(-20px);
-  }
-  60% {
-    transform: translateX(-50%) translateY(-10px);
-  }
+.btn-vibrate:hover {
+  animation: vibrate 0.4s linear infinite;
+  background-color: #ffd700;
+  color: black;
+}
+
+/* Efek hover bergetar */
+.nav-vibrate:hover {
+  animation: vibrate 0.4s linear infinite;
+}
+
+@keyframes vibrate {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
 }
