@@ -10,13 +10,13 @@
   <link rel="stylesheet" href="/css/style.css">
   <style>
     body {
-      background-color: #ffc107; /* kuning cerah */
+      background-color: #ffc107;
       font-family: 'Luckiest Guy', cursive;
     }
 
     h1 {
       font-size: 3rem;
-      margin-top: 100px; /* Jarak dari navbar */
+      margin-top: 100px;
     }
 
     .animal-container {
@@ -64,31 +64,27 @@
     <h1>Hewan</h1>
 
     <div class="animal-container">
-      <% data.forEach(item => { 
-        const namaAudio = item.image.substring(0, item.image.lastIndexOf('.'));
-      %>
-        <div class="animal-box">
-          <img
-            src="/stylesheets/image/kartunhewan.image/<%= item.image %>"
-            onclick="playSound('<%= namaAudio %>')"
-            alt="<%= item.objek %>"
-          >
-          <div class="animal-name"><%= item.objek.toUpperCase() %></div>
-        </div>
-      <% }) %>
+  <% data.forEach(item => { %>
+    <div class="animal-box">
+      <img
+        src="/uploads/images/<%= item.gambar %>"
+        onclick="playSound('<%= item.audio %>')"
+        alt="<%= item.nama_objek %>"
+      >
+      <div class="animal-name"><%= item.nama_objek.toUpperCase() %></div>
     </div>
+  <% }) %>
+</div>
 
-    <audio id="player" hidden></audio>
+<audio id="player" hidden></audio>
 
-    <script>
-      function playSound(nama) {
-        const player = document.getElementById('player');
-        player.src = `/stylesheets/audio/kartunhewan.audio/${nama}.mp3`;
-        player.play();
-      }
-    </script>
-  </div>
-
+<script>
+  function playSound(filename) {
+    const player = document.getElementById('player');
+    player.src = '/uploads/audio/' + filename;
+    player.play();
+  }
+</script>
 </body>
 </html>
 
