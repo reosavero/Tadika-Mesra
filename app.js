@@ -36,7 +36,6 @@ bcrypt.hash(password, 10, (err, hash) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/login', loginRouter);
 app.use('/create', indexRouter);
 
 app.use(function(req, res, next) {
