@@ -34,6 +34,7 @@ bcrypt.hash(password, 10, (err, hash) => {
 });
 
 
+app.use('/', authRoutes);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/create', indexRouter);

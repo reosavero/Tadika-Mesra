@@ -89,4 +89,11 @@ router.post('/create', upload.fields([
   });
 });
 
+router.get('/dashboard', (req, res) => {
+  if (!req.session.admin) {
+    return res.redirect('/login');
+  }
+  res.render('dashboard', { admin: req.session.admin });
+});
+
 module.exports = router;
