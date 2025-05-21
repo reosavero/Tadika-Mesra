@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Hewan</title>
@@ -54,6 +54,9 @@
     footer {
    padding-bottom: 100px;
     } 
+      margin-top: 50px;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -66,33 +69,29 @@
     <h1>Hewan</h1>
 
     <div class="animal-container">
-      <% data.forEach(item => { 
-        const namaAudio = item.image.substring(0, item.image.lastIndexOf('.'));
-      %>
-        <div class="animal-box">
-          <img
-            src="/stylesheets/image/kartunhewan.image/<%= item.image %>"
-            onclick="playSound('<%= namaAudio %>')"
-            alt="<%= item.objek %>"
-          >
-          <div class="animal-name"><%= item.objek.toUpperCase() %></div>
-        </div>
-      <% }) %>
+  <% data.forEach(item => { %>
+    <div class="animal-box">
+      <img
+        src="/uploads/images/<%= item.gambar %>"
+        onclick="playSound('<%= item.audio %>')"
+        alt="<%= item.nama_objek %>"
+      >
+      <div class="animal-name"><%= item.nama_objek.toUpperCase() %></div>
     </div>
+  <% }) %>
+</div>
 
-    <audio id="player" hidden></audio>
-
-    <script>
-      function playSound(nama) {
-        const player = document.getElementById('player');
-        player.src = `/stylesheets/audio/kartunhewan.audio/${nama}.mp3`;
-        player.play();
-      }
-    </script>
-  </div>
+<audio id="player" hidden></audio>
 
   <!-- FOOTER -->
   <%- include('partials/footer') %>
 
+<script>
+  function playSound(filename) {
+    const player = document.getElementById('player');
+    player.src = '/uploads/audio/' + filename;
+    player.play();
+  }
+</script>
 </body>
 </html>

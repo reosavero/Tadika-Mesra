@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Buah</title>
@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <style>
     body {
-      background-color: #28a745; /* hijau cerah */
+      background-color: #28a745;
       font-family: 'Luckiest Guy', cursive;
       color: white;
     }
@@ -62,31 +62,29 @@
   <div class="container text-center">
     <h1>Buah-buahan</h1>
 
-    <div class="fruit-container">
-      <% data.forEach(item => { 
-        const namaAudio = item.image.substring(0, item.image.lastIndexOf('.'));
-      %>
-        <div class="fruit-box">
-          <img
-            src="/stylesheets/image/kartunbuah.image/<%= item.image %>"
-            onclick="playSound('<%= namaAudio %>')"
-            alt="<%= item.objek %>"
-          >
-          <div class="fruit-name"><%= item.objek.toUpperCase() %></div>
-        </div>
-      <% }) %>
+ <div class="fruit-container">
+  <% data.forEach(item => { %>
+    <div class="fruit-box">
+      <img
+        src="/uploads/images/<%= item.gambar %>"
+        onclick="playSound('<%= item.audio %>')"
+        alt="<%= item.nama_objek %>"
+      >
+      <div class="fruit-name"><%= item.nama_objek.toUpperCase() %></div>
     </div>
-
-    <audio id="player" hidden></audio>
-
-    <script>
-      function playSound(nama) {
-        const player = document.getElementById('player');
-        player.src = `/stylesheets/audio/kartunbuah.audio/${nama}.mp3`;
-        player.play();
-      }
-    </script>
+  <% }) %>
   </div>
+
+ <audio id="player" hidden></audio>
+
+<script>
+  function playSound(filename) {
+    const player = document.getElementById('player');
+    player.src = '/uploads/audio/' + filename;
+    player.play();
+  }
+</script>
+  
 
 </body>
 </html>
