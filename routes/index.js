@@ -93,7 +93,18 @@ router.get('/dashboard', (req, res) => {
   if (!req.session.admin) {
     return res.redirect('/login');
   }
-  res.render('dashboard', { admin: req.session.admin });
+
+  db.query('SELECT * FROM kategori', (err, results) => {
+    if (err) {
+      console.error('Gagal mengambil data kategori:', err);
+      return res.status(500).send('Terjadi kesalahan saat mengambil data kategori');
+    }
+
+    res.render('dashboard', {
+      admin: req.session.admin,
+      kategori: results
+    });
+  });
 });
 
 module.exports = router;
