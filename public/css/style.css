@@ -131,6 +131,98 @@ body {
   100% { transform: translateX(0); }
 }
 
+
+.animated-background {
+  background: linear-gradient(
+    to right,
+    #3D90D7,
+    #00ff6a,
+    #ffd700
+  );
+  background-size: 400% 400%;
+  animation: animate-background 10s infinite ease-in-out;
+}
+
+@keyframes animate-background {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-background2 {
+  background: linear-gradient(
+    to right,
+    #3D90D7,
+    #050f9e,
+    #8fcbf3
+  );
+  background-size: 400% 400%;
+  animation: animate-background 10s infinite ease-in-out;
+}
+
+@keyframes animate-background2 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-background3 {
+  background: linear-gradient(
+    to right,
+    #0fd339,
+    #059e33,
+    #8ff3a0
+  );
+  background-size: 400% 400%;
+  animation: animate-background 10s infinite ease-in-out;
+}
+
+@keyframes animate-background3 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-background4 {
+  background: linear-gradient(
+    to right,
+    #dcfa32,
+    #cbdd27,
+    #ddee7c
+  );
+  background-size: 400% 400%;
+  animation: animate-background 10s infinite ease-in-out;
+}
+
+@keyframes animate-background4 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /* General Styling */
 body {
   background-color: #f2f9ff;

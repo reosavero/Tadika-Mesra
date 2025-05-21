@@ -1,5 +1,3 @@
-<%- include('partials/header') %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,12 +52,18 @@
     }
 
     footer {
+   padding-bottom: 100px;
+    } 
       margin-top: 50px;
       color: #fff;
     }
   </style>
 </head>
 <body>
+
+  <body class="animated-background2"></body>
+  <!-- HEADER -->
+  <%- include('partials/header') %>
 
   <div class="container text-center">
     <h1>Hewan</h1>
@@ -79,6 +83,9 @@
 
 <audio id="player" hidden></audio>
 
+  <!-- FOOTER -->
+  <%- include('partials/footer') %>
+
 <script>
   function playSound(filename) {
     const player = document.getElementById('player');
@@ -88,5 +95,3 @@
 </script>
 </body>
 </html>
-
-<%- include('partials/footer') %>
