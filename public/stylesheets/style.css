@@ -37,7 +37,6 @@ input[type="password"] {
   margin-bottom: 10px;
 }
 
-/* Tombol */
 button {
   padding: 12px 25px;
   background-color: #3D90D7;
@@ -56,7 +55,6 @@ button:hover {
   animation: vibrate 0.4s linear infinite;
 }
 
-/* Pesan error */
 .error-message {
   color: red;
   font-weight: bold;
@@ -64,7 +62,6 @@ button:hover {
   font-size: 0.95rem;
 }
 
-/* Efek umum untuk font lucu */
 body {
   font-family: 'Luckiest Guy', cursive;
   background-color: #fefdfd;

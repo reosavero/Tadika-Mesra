@@ -90,21 +90,51 @@ router.post('/create', upload.fields([
 });
 
 router.get('/dashboard', (req, res) => {
-  if (!req.session.admin) {
+  const admin = req.session.admin;
+
+  if (!admin) {
     return res.redirect('/login');
   }
 
-  db.query('SELECT * FROM kategori', (err, results) => {
-    if (err) {
-      console.error('Gagal mengambil data kategori:', err);
-      return res.status(500).send('Terjadi kesalahan saat mengambil data kategori');
-    }
+  const getKategori = `SELECT * FROM kategori`;
+  const getObjek = `
+    SELECT objek.*, kategori.nama AS kategori_nama
+    FROM objek
+    JOIN kategori ON objek.kategori_id = kategori.id
+  `;
 
-    res.render('dashboard', {
-      admin: req.session.admin,
-      kategori: results
+  db.query(getKategori, (err, kategori) => {
+    if (err) throw err;
+
+    db.query(getObjek, (err, objek) => {
+      if (err) throw err;
+
+      res.render('dashboard', {
+        admin,
+        kategori,
+        objek
+      });
     });
   });
+});
+
+
+
+router.get('/delete/:id', async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const [result] = await db.promise().query('DELETE FROM objek WHERE id = ?', [id]);
+
+    if (result.affectedRows > 0) {
+      res.redirect('/dashboard'); // sukses dihapus
+    } else {
+      res.status(404).send('Data tidak ditemukan');
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Gagal menghapus data');
+  }
 });
 
 module.exports = router;
