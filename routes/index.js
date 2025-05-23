@@ -118,7 +118,63 @@ router.get('/dashboard', (req, res) => {
   });
 });
 
+router.get('/edit/:id', (req, res) => {
+  const id = req.params.id;
 
+  const sqlObjek = 'SELECT * FROM objek WHERE id = ?';
+  const sqlKategori = 'SELECT * FROM kategori';
+
+  db.query(sqlObjek, [id], (err, hasilObjek) => {
+    if (err) {
+      console.error(err);
+      return res.send('Gagal mengambil data objek');
+    }
+
+    if (hasilObjek.length === 0) {
+      return res.send('Data tidak ditemukan');
+    }
+
+    db.query(sqlKategori, (err2, hasilKategori) => {
+      if (err2) {
+        console.error(err2);
+        return res.send('Gagal mengambil data kategori');
+      }
+
+      res.render('edit', {
+        objek: hasilObjek[0],
+        kategori: hasilKategori
+      });
+    });
+  });
+});
+
+
+// Proses update
+router.post('/edit/:id', upload.fields([
+  { name: 'gambar', maxCount: 1 },
+  { name: 'audio', maxCount: 1 }
+]), (req, res) => {
+  const id = req.params.id;
+  const { nama_objek, kategori_id } = req.body;
+
+  db.query('SELECT * FROM objek WHERE id = ?', [id], (err, results) => {
+    if (err) return res.send('Gagal mengambil data lama');
+
+    if (results.length === 0) return res.send('Data tidak ditemukan');
+
+    const lama = results[0];
+    const gambarBaru = req.files['gambar'] ? req.files['gambar'][0].filename : lama.gambar;
+    const audioBaru = req.files['audio'] ? req.files['audio'][0].filename : lama.audio;
+
+    const updateQuery = `
+      UPDATE objek SET nama_objek = ?, kategori_id = ?, gambar = ?, audio = ? WHERE id = ?
+    `;
+    db.query(updateQuery, [nama_objek, kategori_id, gambarBaru, audioBaru, id], (err2) => {
+      if (err2) return res.send('Gagal memperbarui data');
+      res.redirect('/dashboard');
+    });
+  });
+});
 
 router.get('/delete/:id', async (req, res) => {
   const id = req.params.id;

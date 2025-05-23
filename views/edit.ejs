@@ -33,6 +33,7 @@
   </style>
 </head>
 <body>
+
   <div class="container mt-5">
     <div class="title-section">
       <h2>Edit Data Objek</h2>
@@ -55,14 +56,14 @@
 
       <div class="mb-3">
         <label class="form-label">Gambar Saat Ini:</label><br>
-        <img src="/uploads/<%= objek.gambar %>" width="100"><br>
+        <img src="/uploads/images/<%= objek.gambar %>" width="100"><br>
         <label for="gambar" class="form-label mt-2">Upload Gambar Baru (jika ingin ganti)</label>
         <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*">
       </div>
 
       <div class="mb-3">
         <label class="form-label">Audio Saat Ini:</label><br>
-        <audio controls src="/uploads/<%= objek.audio %>"></audio><br>
+        <audio controls src="/uploads/audio/<%= objek.audio %>"></audio><br>
         <label for="audio" class="form-label mt-2">Upload Audio Baru (jika ingin ganti)</label>
         <input type="file" class="form-control" id="audio" name="audio" accept="audio/*">
       </div>
@@ -73,6 +74,7 @@
       </div>
     </form>
   </div>
+
 </body>
 </html>
 <%- include('partials/footer') %>
