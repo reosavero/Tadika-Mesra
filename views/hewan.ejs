@@ -1,3 +1,5 @@
+<%- include('partials/header') %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <style>
-    body {
-      background-color: #ffc107;
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
       font-family: 'Luckiest Guy', cursive;
+      background-color: #ffc107;
+    }
+
+    main {
+      flex: 1;
     }
 
     h1 {
@@ -23,6 +34,7 @@
       justify-content: center;
       gap: 20px;
       margin-top: 30px;
+      margin-bottom: 50px;
     }
 
     .animal-box {
@@ -52,43 +64,45 @@
     }
 
     footer {
-   padding-bottom: 100px;
-    } 
+      background-color: #0d0c1d;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
+      <body class="animated-background2"></body>
 
-  <body class="animated-background2"></body>
-  <!-- HEADER -->
-  <%- include('partials/header') %>
-
-  <div class="container text-center">
+  <main class="container text-center">
     <h1>Hewan</h1>
 
     <div class="animal-container">
-  <% data.forEach(item => { %>
-    <div class="animal-box">
-      <img
-        src="/uploads/images/<%= item.gambar %>"
-        onclick="playSound('<%= item.audio %>')"
-        alt="<%= item.nama_objek %>"
-      >
-      <div class="animal-name"><%= item.nama_objek.toUpperCase() %></div>
+      <% data.forEach(item => { %>
+        <div class="animal-box">
+          <img
+            src="/uploads/images/<%= item.gambar %>"
+            onclick="playSound('<%= item.audio %>')"
+            alt="<%= item.nama_objek %>"
+          >
+          <div class="animal-name"><%= item.nama_objek.toUpperCase() %></div>
+        </div>
+      <% }) %>
     </div>
-  <% }) %>
-</div>
 
-<audio id="player" hidden></audio>
+    <audio id="player" hidden></audio>
+  </main>
 
-  <!-- FOOTER -->
+  <script>
+    function playSound(filename) {
+      const player = document.getElementById('player');
+      player.src = '/uploads/audio/' + filename;
+      player.play();
+    }
+  </script>
+
   <%- include('partials/footer') %>
 
-<script>
-  function playSound(filename) {
-    const player = document.getElementById('player');
-    player.src = '/uploads/audio/' + filename;
-    player.play();
-  }
-</script>
 </body>
 </html>
