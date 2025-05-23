@@ -73,11 +73,10 @@
   </style>
 </head>
 <body>
-      <body class="animated-background2"></body>
 
-  <body class="animated-background2"></body>
+       <body class="animated-background2"></body>
 
-  <div class="container text-center">
+  <main class="container text-center">
     <h1>Hewan</h1>
 
     <div class="animal-container">
@@ -93,8 +92,9 @@
       <% }) %>
     </div>
 
-<audio id="player" hidden></audio>
-  
+    <audio id="player" hidden></audio>
+  </main>
+
   <script>
     function playSound(filename) {
       const player = document.getElementById('player');
@@ -107,5 +107,3 @@
 
 </body>
 </html>
-
-<%- include('partials/footer') %>
