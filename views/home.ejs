@@ -2,114 +2,241 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Tadika Mesra - Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  <style>
-    main {
-      flex: 1;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tadika Mesra - Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      main {
+        flex: 1;
+      }
 
-    .scroll-box {
-      overflow-y: auto;
-      padding: 15px;
-      border-radius: 12px;
-    }
+      .scroll-box {
+        overflow-y: auto;
+        padding: 15px;
+        border-radius: 12px;
+      }
 
-    .col-bg-white { background-color: #ffffff; }
-    .col-bg-yellow { background-color: #fff59d; }
-    .col-bg-blue { background-color: #81d4fa; }
+      .col-bg-white {
+        background-color: #ffffff;
+      }
+      .col-bg-yellow {
+        background-color: #fff59d;
+      }
+      .col-bg-blue {
+        background-color: #81d4fa;
+      } 
 
-    .logo-img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px auto;
-    }
+      .logo-img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 20px auto;
+      }
 
-    .kategori-item {
-      background-color: #1565c0;
-      color: white;
-      padding: 10px 15px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      text-align: center;
-      font-size: 1rem;
-      text-decoration: none;
-    }
+      .kategori-item {
+        background-color: #1565c0;
+        color: white;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1rem;
+        text-decoration: none;
+      }
 
-    .kategori-item:hover {
-      background-color: #0d47a1;
-      transform: scale(1.05);
-      cursor: pointer;
-    }
+      .kategori-item:hover {
+        background-color: #0d47a1;
+        transform: scale(1.05);
+        cursor: pointer;
+      }
 
-    .title-section {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+      .title-section {
+        text-align: center;
+        margin-bottom: 40px;
+      }
 
-    .title-section h1 {
-      font-size: 2.5rem;
-      color: #333;
-    }
+      .title-section h1 {
+        font-size: 2.5rem;
+        color: #333;
+      }
 
-    footer {
-      background-color: #0d0c1d;
-      color: white;
-      padding: 30px 0;
-      text-align: center;
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
+      footer {
+        background-color: #0d0c1d;
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+        width: 100%;
+      }
+      .card-feature {
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        height: 300px;
+        transition: all 0.3s ease;
+        text-align: left;
+      }
 
-       <body class="animated-background"></body>
+      .card-feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
 
-  <main class="container mt-5">
-    <div class="title-section">
-      <img src="/images/tadika mesra.png" alt="Tadika Mesra Logo" class="logo-img">
-      <h1>Selamat Datang di Tadika Mesra</h1>
-      <p class="lead">Belajar sambil bermain di dunia penuh warna!</p>
+      .card-feature .card-body {
+        flex-grow: 1;
+      }
+
+      .card-feature .card-image {
+        text-align: right;
+      }
+
+      .card-feature .card-image img {
+        height: 100px;
+        object-fit: contain;
+      }
+
+      .bg-hewan {
+        background-color: #fff;
+      }
+
+      .bg-buah {
+        background-color: #fff;
+        border: 2px solid #fbc02d;
+      }
+
+      .bg-kendaraan {
+        background-color: #fff;
+        border: 2px solid #4caf50;
+      }
+.card-feature:hover {
+  background-color: #1976d2 !important; /* Biru saat disentuh */
+  color: white !important;
+}
+    </style>
+  </head>
+  <body>
+    <body class="animated-background"></body>
+
+    <main class="container mt-5">
+      <div class="title-section">
+        <img
+          src="/images/tadika mesra.png"
+          alt="Tadika Mesra Logo"
+          class="logo-img"
+        />
+        <h1>Belajar sambil bermain di dunia penuh warna!</h1>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="scroll-box col-bg-white shadow">
+            <h4 class="text-center mb-3">🎉 Aktivitas Seru</h4>
+            <p>- Mewarnai hewan lucu</p>
+            <p>- Menyusun puzzle buah</p>
+            <p>- Bernyanyi lagu kendaraan</p>
+            <p>- Game edukatif</p>
+            <p>- Cerita bergambar</p>
+            <p>- Bernyanyi lagu kendaraan</p>
+            <p>- Game edukatif</p>
+            <p>- Cerita bergambar</p>
+                        <p>- Cerita bergambar</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="scroll-box col-bg-yellow shadow">
+            <h4 class="text-center mb-3">📸 Galeri Kegiatan</h4>
+            <p>
+              Lihat keseruan anak-anak saat bermain dan belajar bersama Tadika
+              Mesra!
+            </p>
+            <img
+              src="/images/home1.png" style="padding: 10px;width: 300px;"
+              class="img-fluid rounded my-2"
+              alt="Galeri 1"
+            />
+            <img
+              src="/images/home2.png"style="padding: 10px;width: 300px;"
+              class="img-fluid rounded my-2"
+              alt="Galeri 2"
+            />
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="scroll-box col-bg-blue shadow">
+            <h5 class="text-center mb-3">📚 Kategori</h5>
+            <a href="/hewan" class="kategori-item d-block">Hewan</a>
+            <a href="/buah" class="kategori-item d-block">Buah</a>
+            <a href="/kendaraan" class="kategori-item d-block">Kendaraan</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="container py-5">
+      <div class="row justify-content-center gap-4">
+        <!-- Hewan -->
+        <a
+          href="/hewan"
+          class="col-md-3 card-feature text-dark text-decoration-none bg-hewan shadow"
+        >
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Hewan</h5>
+            <p class="card-text">
+              Belajar mengenal berbagai hewan lucu melalui gambar, suara, dan
+              permainan interaktif.
+            </p>
+          </div>
+          <div class="card-image">
+            <img src="/stylesheets/image/kartunhewan.image/anjing.png" alt="Hewan" />
+          </div>
+        </a>
+
+        <!-- Buah -->
+        <a
+          href="/buah"
+          class="col-md-3 card-feature text-dark text-decoration-none bg-buah shadow"
+        >
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Buah</h5>
+            <p class="card-text">
+              Pelajari berbagai jenis buah-buahan yang sehat dan segar melalui
+              aktivitas menyenangkan.
+            </p>
+          </div>
+          <div class="card-image">
+            <img src="/stylesheets/image/kartunbuah.image/anggur.png" alt="Buah" />
+          </div>
+        </a>
+
+        <!-- Kendaraan -->
+        <a
+          href="/kendaraan"
+          class="col-md-3 card-feature text-dark text-decoration-none bg-kendaraan shadow"
+        >
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Kendaraan</h5>
+            <p class="card-text">
+              Kenali berbagai macam kendaraan darat, laut, dan udara dalam
+              bentuk animasi dan game.
+            </p>
+          </div>
+          <div class="card-image">
+            <img src="/stylesheets/image/kartunkendaraan.image/bus.png" alt="Kendaraan" />
+          </div>
+        </a>
+      </div>
     </div>
-
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="scroll-box col-bg-white shadow">
-          <h4 class="text-center mb-3">🎉 Aktivitas Seru</h4>
-          <p>- Mewarnai hewan lucu</p>
-          <p>- Menyusun puzzle buah</p>
-          <p>- Bernyanyi lagu kendaraan</p>
-          <p>- Game edukatif</p>
-          <p>- Cerita bergambar</p>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="scroll-box col-bg-yellow shadow">
-          <h4 class="text-center mb-3">📸 Galeri Kegiatan</h4>
-          <p>Lihat keseruan anak-anak saat bermain dan belajar bersama Tadika Mesra!</p>
-          <img src="https://source.unsplash.com/400x200/?kids,learning" class="img-fluid rounded my-2" alt="Galeri 1">
-          <img src="https://source.unsplash.com/400x200/?children,education" class="img-fluid rounded my-2" alt="Galeri 2">
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="scroll-box col-bg-blue shadow">
-          <h5 class="text-center mb-3">📚 Kategori</h5>
-          <a href="/hewan" class="kategori-item d-block">Hewan</a>
-          <a href="/buah" class="kategori-item d-block">Buah</a>
-          <a href="/kendaraan" class="kategori-item d-block">Kendaraan</a>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <%- include('partials/footer') %>
-
-</body>
+  </body>
 </html>
+<%- include('partials/footer') %>
